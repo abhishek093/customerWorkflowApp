@@ -12,7 +12,7 @@ const routes: Routes = [
         redirectTo: 'vehicle-details'
       },
       {
-        path :'',
+        path : '',
         component: VehicleDetailsComponent
       }
     ]

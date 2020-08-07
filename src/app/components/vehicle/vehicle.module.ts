@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { VehicleRoutingModule } from './vehicle-routing.module';
 import { VehicleComponent } from './vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { SharedComponentModule } from '../shared-component/shared-component.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
   ],
   imports: [
     CommonModule,
-    VehicleRoutingModule
+    VehicleRoutingModule,
+    SharedComponentModule
   ]
 })
 export class VehicleModule { }

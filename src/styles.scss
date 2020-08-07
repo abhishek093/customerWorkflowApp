@@ -2,3 +2,39 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-card {    
+    text-align: -webkit-center;    
+}      
+    
+.input-full-width {    
+    width: 100%;    
+}        
+mat-card {    
+    max-width: 80%;    
+    margin: 2em auto;    
+    text-align: center;    
+}    
+    
+mat-toolbar-row {    
+    justify-content: space-between;    
+}    
+    
+.done {    
+    position: fixed;    
+    top: 20px;    
+    right: 20px;    
+    color: white;    
+}    
+    
+.content-center {    
+    text-align: -webkit-center;    
+} 
+.customerTable {
+    & .mat-form-field-appearance-fill {
+       & .mat-form-field-infix {
+            padding:  0;
+            width: 60px;
+        }
+    }
+}

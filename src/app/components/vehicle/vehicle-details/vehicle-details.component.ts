@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vehicle-details.component.scss']
 })
 export class VehicleDetailsComponent implements OnInit {
-
+  viewId = 1 ; 
   constructor() { }
 
   ngOnInit() {
