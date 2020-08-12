@@ -1,0 +1,103 @@
+<mat-card>
+    <mat-card-title>
+        Customer Details
+        <mat-divider></mat-divider>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="customerForm" (ngSubmit)="onFormSubmit(customerForm.value)">
+            <table class="customerTable">
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <input formControlName="customerName" matInput placeholder="Customer Name">
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('customerName').valid && customerForm.get('customerName').touched">Please
+                                enter customer name</span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <textarea formControlName="address" matInput placeholder="address" matTextareaAutosize
+                                matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('address').valid && customerForm.get('address').touched">Please
+                                enter proper address(Min 15 Characters)</span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Credit Card Details</h4>
+                        <mat-form-field class="input-full-width">
+                            <input formControlName="cardNo" matInput placeholder="Credit card number" (keypress)="inputFieldNumberOnly($event)">
+                        </mat-form-field>
+                        <mat-error>
+                            <span *ngIf="!customerForm.get('cardNo').valid && customerForm.get('cardNo').touched">Please
+                                enter valid card no (16 digits only)</span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Expiry date</h4>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>MM</mat-label>
+                            <mat-select formControlName="expiryMonth">
+                                <mat-option>Select Month</mat-option>
+                                <mat-option *ngFor="let month of monthList" [value]="month">{{month}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>YY</mat-label>
+                            <mat-select formControlName="expiryYear">
+                                <mat-option>Select Year</mat-option>
+                                <mat-option *ngFor="let year of yearsList" [value]="year">{{year}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                </td>
+                <td>
+                    <h4>CVV</h4>
+                    <mat-form-field class="input-full-width">
+                        <input formControlName="cvv" matInput placeholder="CVV" (keypress)="inputFieldNumberOnly($event)">
+                    </mat-form-field>
+                    <mat-error>
+                        <span *ngIf="!customerForm.get('cvv').valid && customerForm.get('cvv').touched">3 digits only</span>
+                    </mat-error>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <input formControlName="cardHolderName" matInput placeholder="Card Holder Name">
+                        </mat-form-field>
+                        <mat-error>
+                            <span
+                                *ngIf="!customerForm.get('cardHolderName').valid && customerForm.get('cardHolderName').touched">Please
+                                enter card holder Name</span>
+                        </mat-error>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="content-center">
+                        <div class="button-row">
+                            <button type="submit" mat-raised-button color="primary"
+                                [disabled]="!customerForm.valid">Next</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>

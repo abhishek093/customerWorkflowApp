@@ -1,1 +1,110 @@
-<p>summary works!</p>
+<mat-card>
+    <mat-card-title>
+        Customer and Vehicle Summary
+        <mat-divider></mat-divider>
+    </mat-card-title>
+    <mat-card-content>
+        <form>
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <h4>Customer Details</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Customer Name</mat-label>
+                            <input matInput disabled [value]="customerDetails.customerName">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Address</mat-label>
+                            <input matInput disabled [value]="customerDetails.address">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Credit card no</mat-label>
+                            <input matInput disabled [value]="customerDetails.cardNo">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                <tr>
+                    <td>
+                        <mat-form-field>
+                            <mat-label>Expiry date</mat-label>
+                            <input matInput disabled [value]="customerDetails.expiryMonth">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field>
+                            <input matInput disabled [value]="customerDetails.expiryYear">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                </td>
+                <td>
+                    <mat-form-field class="input-full-width">
+                        <mat-label>CVV</mat-label>
+                        <input type="password" matInput disabled [value]="customerDetails.cvv">
+                    </mat-form-field>
+                </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Card holder name</mat-label>
+                            <input matInput disabled [value]="customerDetails.cardHolderName">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Vehicle Details</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Car Make</mat-label>
+                            <input matInput disabled [value]="vehicleDetails.carMake">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Model</mat-label>
+                            <input matInput disabled [value]="vehicleDetails.model">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Year</mat-label>
+                            <input matInput disabled [value]="vehicleDetails.year">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Mileage</mat-label>
+                            <input matInput disabled [value]="vehicleDetails.mileage">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr colspan="2" class="content-center">
+                    <div class="button-row">
+                        <button mat-raised-button color="basic" (click)="redirectBack()">Back</button>
+                    </div>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>
