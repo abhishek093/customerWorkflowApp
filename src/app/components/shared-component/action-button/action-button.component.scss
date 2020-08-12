@@ -1,9 +1,0 @@
-.action-button-cont {
-    display: table;
-    & .button-row{
-        display: table-cell;
-        & .mat-button-base {
-            margin: 8px 8px 8px 0;
-        }
-    }
-}

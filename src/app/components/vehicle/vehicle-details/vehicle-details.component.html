@@ -1,3 +1,60 @@
-<p>vehicle-details works!</p>
-
-<app-action-button [pageId]= "viewId"></app-action-button>
+<mat-card>
+    <mat-card-title>
+        Vehicle Details
+        <mat-divider></mat-divider>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="vehicleForm" (ngSubmit)="onFormSubmit(vehicleForm.getRawValue())">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Car Make</mat-label>
+                            <mat-select formControlName="carMake" (selectionChange)="onCarMakeChange($event)">
+                                <mat-option>Select Car</mat-option>
+                                <mat-option *ngFor="let carMake of carMakeList" [value]="carMake">{{carMake}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Model</mat-label>
+                            <mat-select formControlName="model" (selectionChange)="onCarModelChange($event)">
+                                <mat-option>Select Model</mat-option>
+                                <mat-option *ngFor="let model of carModel" [value]="model">{{model}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Year</mat-label>
+                            <input matInput formControlName="year" [value]="carYear">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <mat-form-field class="input-full-width">
+                            <mat-label>Mileage</mat-label>
+                            <input matInput formControlName="mileage" [value]="carMileage">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="content-center">
+                        <div class="button-row">
+                            <button mat-raised-button color="basic" (click)="redirectBack()">Back</button>
+                            <button type="submit" mat-raised-button color="primary"
+                                [disabled]="!vehicleForm.valid">Next</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>

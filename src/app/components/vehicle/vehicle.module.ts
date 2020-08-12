@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { VehicleRoutingModule } from './vehicle-routing.module';
 import { VehicleComponent } from './vehicle.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
-import { SharedComponentModule } from '../shared-component/shared-component.module';
+import { AngularMaterialModule } from 'src/app/app-shared/angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,10 @@ import { SharedComponentModule } from '../shared-component/shared-component.modu
   imports: [
     CommonModule,
     VehicleRoutingModule,
-    SharedComponentModule
+    FormsModule, 
+    ReactiveFormsModule,
+    AngularMaterialModule
   ]
+
 })
 export class VehicleModule { }
